@@ -1,6 +1,6 @@
 ---
 name: content-research
-description: "Use when: researching technical topics for blog posts, validating information sources, gathering references, fact-checking technical claims, or finding authoritative sources for articles. Helps identify credible sources, validate technical accuracy, and organize research for blog content."
+description: "Use when: researching technical topics for blog posts, validating information sources, gathering references, fact-checking technical claims, or finding authoritative sources for articles. Helps identify credible sources, validate technical accuracy, and organize research for blog content. Always outputs a structured Source Registry that feeds directly into the /bibliography skill."
 tools:
   - mcp_tech-blog-fetcher_fetch_recent_posts
   - mcp_tech-blog-fetcher_fetch_article_content
@@ -10,59 +10,98 @@ tools:
 
 # Content Research Skill
 
-Specialized skill for researching technical topics and validating sources for blog posts.
+Specialized skill for researching technical topics, validating sources, and producing a structured Source Registry that the `/bibliography` skill uses to generate the final article bibliography.
 
 ## What This Skill Does
 
-- **Source Validation**: Identify credible, authoritative sources (documentation, academic papers, official blogs)
-- **Topic Research**: Gather comprehensive information on technical subjects
-- **Reference Organization**: Structure and cite sources properly
-- **Fact Verification**: Validate technical claims and accuracy
-- **Trend Analysis**: Identify current trends and relevance in the tech space
-- **Competitor Analysis**: Review similar articles to ensure unique angle
+- **Source Discovery**: Find credible, authoritative sources using MCP tools across 12 top tech blogs, plus official docs and papers
+- **Source Validation**: Verify each source is current, credible, and directly relevant
+- **Fact Extraction**: Pull key claims, stats, and data points with their exact source URLs
+- **Source Registry**: Output every source with full metadata so nothing gets lost between research and publication
+- **Fact Checking**: Cross-reference claims across multiple sources before including them
 
 ## Research Process
 
-### 1. Topic Analysis
+### Step 1: Topic Analysis
 - Define the core topic and scope
-- Identify key subtopics to cover
-- List must-know concepts
+- Identify key subtopics and must-know concepts
+- Note what claims will need sourcing (stats, benchmarks, specific assertions)
 
-### 2. Source Gathering
-- Official documentation and specs
-- Reputable tech blogs and publications
-- GitHub repositories with examples
-- Academic papers or technical whitepapers
-- Industry reports and benchmarks
+### Step 2: Source Gathering
 
-### 3. Information Organization
-- Categorize findings by theme
-- Note key statistics and data
-- Identify gaps in understanding
-- Flag unique angles or insights
+Use MCP tools first, then supplement:
 
-### 4. Fact Checking
-- Cross-reference claims across sources
-- Verify version numbers and dates
-- Validate code examples
-- Check for deprecated information
+```
+search_sources(query="<topic>", limit=5)        — broad sweep across all sources
+fetch_recent_posts(source_id="aws", topic="…")  — targeted by source
+fetch_article_content(url="…")                  — full content + metadata
+```
 
-## Research Output Format
+Also gather from:
+- Official documentation and specs (MDN, docs.python.org, kubernetes.io, etc.)
+- Academic papers (arXiv, Google Scholar, ACM)
+- GitHub repositories with real usage examples
+- Industry reports (Gartner, Stack Overflow Survey, State of JS, etc.)
 
-Structure findings as:
-- **Key Concepts**: What readers need to understand
-- **Sources**: URLs and citations with credibility notes
-- **Data Points**: Statistics, benchmarks, comparisons
-- **Code Examples**: GitHub repos, documentation links
-- **Unique Angles**: Original insights or perspectives
-- **Gaps**: Topics not covered elsewhere
+### Step 3: Source Evaluation
+
+For every source, assess:
+
+| Criterion | What to check |
+|-----------|--------------|
+| Authority | Is this an official source, known expert, or major publication? |
+| Recency | Published within 18 months? If older, is it still valid? |
+| Accuracy | Does it cross-validate with other sources? |
+| Relevance | Does it directly support a claim in this article? |
+| Accessibility | Is the URL publicly accessible (not paywalled)? |
+
+Discard sources that fail authority or recency unless they are foundational references.
+
+### Step 4: Fact Extraction
+
+For every factual claim, stat, or data point you plan to use in the article, record:
+- The exact claim or quote
+- The source it came from (by Source ID)
+- The inline citation tag to use (e.g., `[1]`, `[AWS-2025]`)
+
+### Step 5: Output the Source Registry
+
+Every research session MUST end with a complete Source Registry block. This is the handoff to `/bibliography`.
+
+---
+
+## Source Registry Format
+
+Output this block at the end of every research session, replacing placeholders:
+
+```
+## Source Registry
+
+| ID | Title | Author / Org | URL | Type | Published | Credibility |
+|----|-------|-------------|-----|------|-----------|-------------|
+| [1] | <title> | <author or org> | <url> | <doc/blog/paper/report> | <YYYY-MM> | High/Medium |
+| [2] | ...    | ...           | ... | ...  | ...       | ...         |
+
+## Inline Citation Map
+
+Claims and the source IDs that support them:
+
+- "<exact claim or stat from article>" → [1]
+- "<another claim>" → [2], [3]
+
+## Flagged Gaps
+
+Sources I could not find for these claims (agent must decide whether to remove the claim or find an alternative):
+- <claim that needs sourcing but none found>
+```
+
+---
 
 ## Best Practices
 
-- Prioritize official documentation
-- Use primary sources when possible
-- Note publication dates (avoid outdated info)
-- Cross-validate controversial claims
-- Document source credibility
-- Check for newer versions or updates
-- Identify conflicting information early
+- Every stat, benchmark, or specific technical claim in the article must have a row in the Source Registry
+- Never include a source you have not actually read or fetched — no placeholder URLs
+- If a source is paywalled, note it in the Credibility column and find a public alternative where possible
+- Prioritize sources from the MCP server's curated list (AWS, Meta, Google, Netflix, ByteByteGo, etc.) over generic search results
+- If two sources contradict each other, flag the conflict in Flagged Gaps rather than silently picking one
+- Check publication dates: anything older than 18 months in a fast-moving field (AI, cloud, frontend) needs explicit validation

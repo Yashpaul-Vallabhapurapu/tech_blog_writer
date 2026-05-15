@@ -4,6 +4,11 @@
       "command": "node",
       "args": ["mcp/tech-blog-fetcher/dist/index.js"],
       "description": "Fetches and parses content from top tech blogs: AWS, Meta, Google, Netflix, ByteByteGo, Pragmatic Engineer, and more"
+    },
+    "diagram-server": {
+      "command": "node",
+      "args": ["mcp/diagram-server/dist/index.js"],
+      "description": "Generates and renders diagrams (flowcharts, sequence, architecture, mind maps) via Kroki.io. Returns embeddable image URLs for Medium articles."
     }
   }
 }

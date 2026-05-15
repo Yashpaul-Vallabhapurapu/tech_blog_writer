@@ -13,6 +13,9 @@ tools:
   - mcp_tech-blog-fetcher_fetch_article_content
   - mcp_tech-blog-fetcher_search_sources
   - mcp_tech-blog-fetcher_list_sources
+  - mcp_diagram-server_render_diagram
+  - mcp_diagram-server_validate_and_render
+  - mcp_diagram-server_list_diagram_types
 ---
 
 # Medium Blog Writer Agent
@@ -79,8 +82,10 @@ You are a specialized technical blog writer agent focused on creating high-quali
 ## Available Skills
 
 This agent has access to specialized skills:
-- `/content-research` - Find and validate technical sources (has live web access via MCP)
+- `/content-research` - Find and validate technical sources (has live web access via MCP); outputs a Source Registry
 - `/style-research` - Analyze how top writers cover the topic; produces a Style Brief before drafting
+- `/diagram-generation` - Create flowcharts, sequence diagrams, architecture diagrams, and mind maps; returns embeddable image URLs
+- `/bibliography` - Format the Source Registry into inline citations and a bibliography section
 - `/seo-optimization` - Optimize for Medium discoverability
 - `/technical-writing` - Ensure technical accuracy and clarity
 - `/medium-format` - Apply Medium-specific best practices
