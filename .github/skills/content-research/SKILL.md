@@ -1,6 +1,11 @@
 ---
 name: content-research
 description: "Use when: researching technical topics for blog posts, validating information sources, gathering references, fact-checking technical claims, or finding authoritative sources for articles. Helps identify credible sources, validate technical accuracy, and organize research for blog content."
+tools:
+  - mcp_tech-blog-fetcher_fetch_recent_posts
+  - mcp_tech-blog-fetcher_fetch_article_content
+  - mcp_tech-blog-fetcher_search_sources
+  - mcp_tech-blog-fetcher_list_sources
 ---
 
 # Content Research Skill

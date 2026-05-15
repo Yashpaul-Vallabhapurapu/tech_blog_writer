@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "tech-blog-fetcher": {
+      "command": "node",
+      "args": ["mcp/tech-blog-fetcher/dist/index.js"],
+      "description": "Fetches and parses content from top tech blogs: AWS, Meta, Google, Netflix, ByteByteGo, Pragmatic Engineer, and more"
+    }
+  }
+}
