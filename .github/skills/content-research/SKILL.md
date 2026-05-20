@@ -6,6 +6,8 @@ tools:
   - mcp_tech-blog-fetcher_fetch_article_content
   - mcp_tech-blog-fetcher_search_sources
   - mcp_tech-blog-fetcher_list_sources
+  - WebFetch
+compatibility: "Requires mcp-server: tech-blog-fetcher (WebFetch used as fallback for URLs outside the curated source list)"
 ---
 
 # Content Research Skill
@@ -29,19 +31,22 @@ Specialized skill for researching technical topics, validating sources, and prod
 
 ### Step 2: Source Gathering
 
-Use MCP tools first, then supplement:
+Use MCP tools for the curated blogs, WebFetch for everything else:
 
 ```
-search_sources(query="<topic>", limit=5)        — broad sweep across all sources
+search_sources(query="<topic>", limit=5)        — broad sweep across all 16 curated sources
 fetch_recent_posts(source_id="aws", topic="…")  — targeted by source
-fetch_article_content(url="…")                  — full content + metadata
+fetch_article_content(url="…")                  — full content + structural metadata
+
+WebFetch(url="…")                               — any URL outside the curated list
 ```
 
-Also gather from:
-- Official documentation and specs (MDN, docs.python.org, kubernetes.io, etc.)
-- Academic papers (arXiv, Google Scholar, ACM)
-- GitHub repositories with real usage examples
-- Industry reports (Gartner, Stack Overflow Survey, State of JS, etc.)
+Curated sources (use MCP): AWS, Meta, Google AI, Google Developers, Amazon Science, DeepMind,
+Netflix, ByteByteGo, Pragmatic Engineer, Towards Data Science, freeCodeCamp, Hackernoon,
+Martin Fowler, Shopify Engineering, Uber Engineering, Airbnb Engineering.
+
+Any other URL (use WebFetch): official docs (MDN, kubernetes.io, docs.python.org),
+academic papers (arXiv, ACM), GitHub repos, industry reports, any blog not in the list above.
 
 ### Step 3: Source Evaluation
 
@@ -105,3 +110,49 @@ Sources I could not find for these claims (agent must decide whether to remove t
 - Prioritize sources from the MCP server's curated list (AWS, Meta, Google, Netflix, ByteByteGo, etc.) over generic search results
 - If two sources contradict each other, flag the conflict in Flagged Gaps rather than silently picking one
 - Check publication dates: anything older than 18 months in a fast-moving field (AI, cloud, frontend) needs explicit validation
+
+---
+
+## Examples
+
+### Example 1: Research an article on Kubernetes autoscaling
+
+```
+search_sources(query="kubernetes horizontal pod autoscaling", limit=5)
+→ selects 3 posts from AWS Blog + ByteByteGo + official kubernetes.io docs
+→ outputs Source Registry with 5 entries, Inline Citation Map with 4 claims
+```
+
+### Example 2: Fact-check a specific claim
+
+```
+fetch_article_content(url="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/")
+→ cross-references claim "HPA polls metrics every 15 seconds" against official doc
+→ confirms claim, adds source [K8s-Docs] to registry
+```
+
+---
+
+## Error Handling
+
+| Error | Handling |
+|-------|----------|
+| MCP server unavailable | Fall back to WebFetch for individual article URLs; note the limitation |
+| No results for query | Broaden to adjacent terms, then narrow after initial sweep |
+| Paywalled source | Mark Credibility as "Medium (paywalled)"; find a public alternative |
+| Two sources contradict | Do not silently pick one — add both to Flagged Gaps with the conflict noted |
+| Source URL returns 404 | Remove from registry; flag in Flagged Gaps |
+
+---
+
+## Next Steps
+
+Pass the completed Source Registry to `/bibliography` for citation formatting. Share factual claims with `/technical-writing` for accuracy verification during drafting.
+
+---
+
+## Related Skills
+
+- `/bibliography` — consumes the Source Registry this skill outputs
+- `/style-research` — run in parallel to analyze tone before drafting
+- `/technical-writing` — uses the verified facts this skill produces

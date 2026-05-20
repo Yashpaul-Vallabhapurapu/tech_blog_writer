@@ -122,6 +122,44 @@ export const SOURCES: Record<string, BlogSource> = {
     paywalled: false,
     tags: ["streaming", "infrastructure", "java", "data", "netflix"],
   },
+
+  // Additional sources
+  "martin-fowler": {
+    id: "martin-fowler",
+    name: "Martin Fowler",
+    url: "https://martinfowler.com",
+    rss: "https://martinfowler.com/feed.atom",
+    category: "independent",
+    paywalled: false,
+    tags: ["architecture", "refactoring", "patterns", "agile", "design"],
+  },
+  "shopify-engineering": {
+    id: "shopify-engineering",
+    name: "Shopify Engineering",
+    url: "https://shopify.engineering",
+    rss: "https://shopify.engineering/blogs/engineering.atom",
+    category: "big-tech",
+    paywalled: false,
+    tags: ["ruby", "rails", "infrastructure", "e-commerce", "scalability"],
+  },
+  "uber-engineering": {
+    id: "uber-engineering",
+    name: "Uber Engineering",
+    url: "https://eng.uber.com",
+    rss: "https://eng.uber.com/feed/",
+    category: "big-tech",
+    paywalled: false,
+    tags: ["distributed-systems", "real-time", "maps", "data", "golang"],
+  },
+  "airbnb-engineering": {
+    id: "airbnb-engineering",
+    name: "Airbnb Engineering",
+    url: "https://medium.com/airbnb-engineering",
+    rss: "https://medium.com/feed/airbnb-engineering",
+    category: "big-tech",
+    paywalled: false,
+    tags: ["data", "infrastructure", "ml", "react", "scalability"],
+  },
 };
 
 export const ALL_SOURCE_IDS = Object.keys(SOURCES);

@@ -165,3 +165,55 @@ def example_function(param: str) -> str:
 - ❌ Missing important edge cases
 - ❌ Writing only "why" without "how"
 - ❌ Assuming too much background knowledge
+
+---
+
+## Examples
+
+### Example 1: Draft the "How It Works" section for vector embeddings
+
+```
+Pattern: Simple definition → visual analogy → code example → key insight
+
+1. One-sentence definition: "An embedding is a fixed-size numerical vector that represents text meaning."
+2. Analogy: "Think of it as a point in high-dimensional space where similar meanings cluster together."
+3. Code block: sentence_transformers encode() with comments
+4. Key insight: why cosine similarity works better than Euclidean distance here
+```
+
+### Example 2: Review code accuracy for a Redis caching example
+
+```
+Checklist applied to the submitted snippet:
+✅ Code is complete and runnable
+✅ Version matches documented Redis 7.x syntax
+✅ Error handling shown (ConnectionError catch block)
+❌ TTL value hardcoded as 3600 — flag for config extraction
+❌ No comment explaining why TTL is set to 1 hour — add inline note
+```
+
+---
+
+## Error Handling
+
+| Error | Handling |
+|-------|----------|
+| Code example cannot be tested locally | Add a comment with the version it targets; note in the article that readers should verify against their version |
+| Technical claim lacks a source | Flag inline with `[citation needed]`; do not finalize the article until `/content-research` provides a source |
+| Concept too advanced for target audience | Apply progressive disclosure: one-sentence definition → simple analogy → technical detail |
+| Code block exceeds 30 lines | Split into smaller focused blocks; each block illustrates one concept |
+
+---
+
+## Next Steps
+
+After drafting all sections, pass the article to `/seo-optimization` for title and tag optimization, then `/bibliography` to insert citation markers, then `/medium-format` for final formatting.
+
+---
+
+## Related Skills
+
+- `/outline-generation` — provides the structure to draft against
+- `/content-research` — supplies verified sources for technical claims
+- `/seo-optimization` — optimizes title and structure after drafting
+- `/bibliography` — inserts citation markers after writing is complete

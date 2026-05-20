@@ -300,3 +300,53 @@ Medium's editor handles images well:
 6. **Images**: Breakup walls of text; Medium's algorithm favors varied content
 7. **Publication timing**: Publish when your audience is active
 8. **Engagement**: Respond to comments; algorithm boosts discussed articles
+
+---
+
+## Examples
+
+### Example 1: Fix heading hierarchy in a draft
+
+```
+Input:  H1 title → H4 subsections (skips H2 and H3)
+Fix:    Replace all H4 with H3; verify no heading levels are skipped throughout
+Result: H1 title → H2 sections → H3 subsections
+```
+
+### Example 2: Format a code-heavy section
+
+````
+Input:  Raw Python block with no language identifier
+Fix:
+```python
+# comment explaining purpose
+def process(data: list) -> dict:
+    ...
+```
+Also add inline `backticks` to variable names (e.g., `data`, `process`) in the surrounding prose
+````
+
+---
+
+## Error Handling
+
+| Error | Handling |
+|-------|----------|
+| Code block missing language identifier | Infer from surrounding context; default to `text` if ambiguous |
+| Image URL returns 404 | Remove the image tag; insert `[IMAGE PLACEHOLDER — replace with final URL]` for the author |
+| Heading levels skip (e.g., H2 → H4) | Insert the missing H3 level or flatten the hierarchy |
+| Article exceeds target reading time | Flag which sections are longest but do not cut content automatically — that is the author's decision |
+
+---
+
+## Next Steps
+
+After formatting, run through the full **Publishing Preparation Checklist** in this skill. When every checkbox passes, the article is ready to publish on Medium.
+
+---
+
+## Related Skills
+
+- `/seo-optimization` — run before this skill; provides the optimized title and tags
+- `/bibliography` — run before this skill; citations must be inserted before final formatting
+- `/technical-writing` — run before this skill; code examples must be complete before formatting

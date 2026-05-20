@@ -6,6 +6,8 @@ tools:
   - mcp_tech-blog-fetcher_fetch_article_content
   - mcp_tech-blog-fetcher_search_sources
   - mcp_tech-blog-fetcher_list_sources
+  - WebFetch
+compatibility: "Requires mcp-server: tech-blog-fetcher (WebFetch used as fallback for URLs outside the curated source list)"
 ---
 
 # Style Research Skill
@@ -24,6 +26,7 @@ Analyzes how contemporary top tech writers cover a topic — extracting tone, vo
 ### Independent Writers
 - **The Pragmatic Engineer** — senior engineering lens, career + architecture depth
 - **ByteByteGo** — system design, visual explanations, high-density technical content
+- **Martin Fowler** — architecture, refactoring, design patterns, agile
 
 ### Community Platforms
 - **Towards Data Science** — ML/AI, Python, data-heavy, academic-accessible
@@ -38,6 +41,12 @@ Analyzes how contemporary top tech writers cover a topic — extracting tone, vo
 - **Google Developers Blog** — practical developer content, APIs, tooling
 - **DeepMind Blog** — cutting-edge AI research, scientific framing
 - **Netflix Tech Blog** — streaming infrastructure, Java/Scala, data engineering
+- **Shopify Engineering** — Ruby/Rails, e-commerce infrastructure, scalability
+- **Uber Engineering** — distributed systems, real-time data, maps, Go
+- **Airbnb Engineering** — data platform, ML, React, large-scale infrastructure
+
+### Any URL (WebFetch fallback)
+For sources not in the curated list above, use `WebFetch` directly with the article URL.
 
 ## Workflow
 
@@ -141,3 +150,48 @@ Invoke before drafting:
 The Style Brief is then passed to the drafting phase so every writing decision
 (word choice, heading style, analogy frequency, code depth) is grounded in how
 the best writers actually handle this topic today — not generic writing advice.
+
+---
+
+## Examples
+
+### Example 1: Style research for a WebAssembly article
+
+```
+search_sources(query="WebAssembly performance browser", limit=3)
+→ fetches posts from ByteByteGo, Google Developers Blog, Hackernoon
+→ Style Brief: semi-formal, expert vocabulary, code-heavy, problem-first framing
+```
+
+### Example 2: Style calibration for a system design post
+
+```
+search_sources(query="distributed caching system design", limit=3)
+→ fetches from ByteByteGo + Netflix Tech Blog
+→ Style Brief: visual-heavy, numbered steps, analogy-first for each concept
+```
+
+---
+
+## Error Handling
+
+| Error | Handling |
+|-------|----------|
+| No recent posts found for topic | Broaden search to the parent topic area; note narrowed scope in Style Brief |
+| MCP server unavailable | Use general knowledge of each source's typical style; note the limitation in the Style Brief |
+| Selected article is paywalled | Skip it; choose the next best candidate from the search results |
+| Fewer than 3 articles found | Proceed with 1–2; note reduced sample size and lower confidence in the Style Brief |
+
+---
+
+## Next Steps
+
+Pass the Style Brief to the agent before `/technical-writing` begins. The agent uses the brief to calibrate word choice, heading frequency, and analogy usage throughout the draft.
+
+---
+
+## Related Skills
+
+- `/content-research` — run in parallel alongside this skill before drafting
+- `/outline-generation` — structure patterns from the Style Brief inform outline decisions
+- `/technical-writing` — consumes the Style Brief this skill produces

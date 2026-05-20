@@ -479,3 +479,53 @@ A: 1-2 weeks gives original time to gain traction and rankings.
 
 **Q: Can I Linked Post the same article multiple times?**
 A: Don't repeat same article. Each Linked Post should be unique content (different summary, different angle, different Medium audience).
+
+---
+
+## Examples
+
+### Example 1: Summary Linked Post for a 3,000-word distributed tracing article
+
+```
+Strategy: 2 (Summary — 30–50% of original)
+Target length: 900 words (6-min read)
+Structure: Problem → 3 key insights → code snippet → CTA
+CTA: "Read the full implementation guide with benchmarks: [link]"
+Title adapted for Medium: "How Distributed Tracing Saved Us 40% on Debug Time"
+Tags: DevOps / Observability / Microservices / Engineering
+```
+
+### Example 2: Full Cross-Post for a timely new framework release
+
+```
+Strategy: 1 (Full Cross-Post — identical content)
+Reason: Time-sensitive announcement; same-day publish maximizes reach
+Formatting: Apply /medium-format to match Medium conventions
+Canonical URL: set to original blog post URL
+Link placement: end of article — "Originally published at [your-blog.com]"
+```
+
+---
+
+## Error Handling
+
+| Error | Handling |
+|-------|----------|
+| Source article URL is not live | Verify the URL resolves before publishing; a dead link invalidates the Linked Post |
+| Original article is under 800 words | Use Strategy 1 (full cross-post) instead of a summary |
+| Medium rejects the linked post URL | Use the exact canonical form — no UTM parameters, no redirect chains |
+| Content references platform-specific tooling unfamiliar to Medium readers | Add a one-paragraph context section at the top before the main content |
+
+---
+
+## Next Steps
+
+After creating the Linked Post draft, pass to `/seo-optimization` to adapt the title for Medium's recommendation algorithm. Then `/medium-format` for final formatting before publishing.
+
+---
+
+## Related Skills
+
+- `/medium-format` — always run after to apply Medium-specific formatting
+- `/seo-optimization` — adapt the title specifically for Medium's algorithm
+- `/technical-writing` — if adding Medium-exclusive analysis sections, use for accuracy review

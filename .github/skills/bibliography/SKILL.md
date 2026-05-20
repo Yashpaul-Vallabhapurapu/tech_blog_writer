@@ -166,3 +166,62 @@ Invoke after content-research, before final formatting:
 ```
 
 The agent inserts citation markers into the draft, appends the bibliography block, and passes the complete article to `/medium-format`.
+
+---
+
+## Examples
+
+### Example 1: Format a Source Registry with 5 sources
+
+Input: Source Registry with IDs [1]–[5], Inline Citation Map with 6 claims
+
+Output:
+```markdown
+## References
+
+### Engineering Blogs
+[1] [Scaling at Netflix](https://netflixtechblog.com/...) — Author, Netflix Tech Blog, March 2025
+[2] [ByteByteGo: System Design at Scale](https://blog.bytebytego.com/...) — Alex Xu, ByteByteGo, Jan 2025
+
+### Official Documentation
+[3] [Kubernetes HPA](https://kubernetes.io/docs/...) — Kubernetes, accessed May 2025
+
+## Citation Markers (insert into article body)
+[1] → after: "Netflix processes 700GB of data per second"
+[3] → after: "HPA polls metrics every 15 seconds by default"
+```
+
+### Example 2: Handle a credibility-flagged source
+
+Input: Source [4] marked "Medium" credibility in the Source Registry
+
+Output:
+```
+[4] [Title](url) — Author, Publication, Jan 2025 *(secondary source; cross-referenced with [1])*
+```
+
+---
+
+## Error Handling
+
+| Error | Handling |
+|-------|----------|
+| No Source Registry provided | Stop immediately — invoke `/content-research` first before this skill can run |
+| Source URL returns 404 | Format the entry with `*(link unavailable — verify URL)*` appended |
+| Missing author name | Use the organization name alone |
+| Duplicate source IDs in registry | Renumber all IDs sequentially before formatting |
+| Claim in draft not in Inline Citation Map | Flag it in the Missing Citations section |
+
+---
+
+## Next Steps
+
+After inserting citation markers in the draft and appending the bibliography block, pass the complete article to `/medium-format` for final formatting.
+
+---
+
+## Related Skills
+
+- `/content-research` — must run first; produces the Source Registry this skill requires
+- `/medium-format` — always runs after; formats the complete article including the bibliography block
+- `/technical-writing` — verify all cited technical claims are accurately represented in the draft

@@ -5,9 +5,12 @@ tools:
   - mcp_diagram-server_render_diagram
   - mcp_diagram-server_validate_and_render
   - mcp_diagram-server_list_diagram_types
+compatibility: "Requires mcp-server: diagram-server"
 ---
 
 # Diagram Generation Skill
+
+## What This Skill Does
 
 Decides what to draw, writes the diagram source code, renders it via the diagram-server MCP, and returns a markdown image tag ready to paste into the article.
 
@@ -181,3 +184,68 @@ The agent should invoke this skill at two points:
 2. **During drafting** — generate and embed diagrams as each section is written, not all at once at the end
 
 When the outline flags a section as needing a figure, pass that section's summary to this skill before drafting the prose. The diagram should exist before the prose is written so the writing can reference it naturally.
+
+---
+
+## Examples
+
+### Example 1: Architecture diagram for a multi-layer system
+
+```
+flowchart TD
+    subgraph Agent Layer
+        A[medium-blog-writer]
+    end
+    subgraph Skill Layer
+        B[/content-research/]
+        C[/diagram-generation/]
+    end
+    A --> B & C
+```
+
+```
+validate_and_render(type: "mermaid", source: "...", alt_text: "Agent orchestrates skills", format: "svg")
+→ returns: ![Agent orchestrates skills](https://kroki.io/mermaid/svg/...)
+```
+
+### Example 2: Sequence diagram for agent-to-MCP request flow
+
+```
+sequenceDiagram
+    actor User
+    participant Agent
+    participant MCP
+    User->>Agent: write article
+    Agent->>MCP: fetch_recent_posts
+    MCP-->>Agent: posts
+    Agent-->>User: drafted section
+```
+
+```
+validate_and_render(type: "mermaid", source: "...", alt_text: "Request flow from user through agent to MCP", format: "svg")
+→ returns: ![Request flow from user through agent to MCP](https://kroki.io/mermaid/svg/...)
+```
+
+---
+
+## Error Handling
+
+| Error | Handling |
+|-------|----------|
+| `validate_and_render` parse error | Read the error message, fix the specific syntax issue (common errors in Step 3), retry |
+| Kroki.io unreachable | Include diagram source as a fenced code block inline; note the URL will render when the server is available |
+| Diagram too complex (>10 nodes) | Split into two focused diagrams; each covers one concept |
+| `list_diagram_types` returns unexpected types | Default to `mermaid`; it handles 80% of use cases |
+
+---
+
+## Next Steps
+
+Embed the returned `markdownImage` tag in the article at the location flagged in the outline. Ensure the preceding paragraph introduces what the diagram shows before it appears.
+
+---
+
+## Related Skills
+
+- `/outline-generation` — identifies which sections need diagrams before drafting begins
+- `/technical-writing` — prose must reference every diagram placed in the article

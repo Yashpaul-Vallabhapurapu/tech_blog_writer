@@ -325,3 +325,59 @@ IX. Conclusion
 8. **Front-load Value**: Put most important/interesting info early
 9. **Test Structure**: Read outline; does it make sense standalone?
 10. **Be Specific**: Use specific terms, not generic headings
+
+---
+
+## Examples
+
+### Example 1: 10-minute article on React Server Components
+
+```
+Topic: React Server Components | Audience: Intermediate React devs | Target: 2,000 words
+Pattern: Theory → Practice → Application
+
+I.   What React Server Components Are
+II.  Server vs Client Components — Where the Line Is
+III. When to Use RSC (and When Not To)
+IV.  Implementation: Fetching Data on the Server
+V.   Common Pitfalls and How to Avoid Them
+VI.  Migration Guide for Existing Apps
+```
+
+### Example 2: Beginner guide to Docker networking
+
+```
+Topic: Docker networking | Audience: Beginners | Target: 1,500 words
+Pattern: Quick Start → Deep Dive → Mastery
+
+I.   Your First Container Network (get something working fast)
+II.  Bridge vs Host vs Overlay — What Each Mode Does
+III. Connecting Two Containers
+IV.  DNS in Docker: How Containers Find Each Other
+V.   Debugging Network Issues
+```
+
+---
+
+## Error Handling
+
+| Error | Handling |
+|-------|----------|
+| Topic too broad (e.g., "cloud computing") | Ask the agent to narrow scope before generating; suggest a specific aspect |
+| Topic too narrow for target word count | Suggest merging with an adjacent concept or reducing the target reading time |
+| Sections do not build progressively | Reorder to enforce fundamentals → intermediate → advanced |
+| Target audience unclear | Ask for clarification; beginner vs expert changes section depth significantly |
+
+---
+
+## Next Steps
+
+Review the outline with the agent, then pass to `/diagram-generation` to identify which sections need figures. Begin drafting section by section with `/technical-writing`.
+
+---
+
+## Related Skills
+
+- `/style-research` — run before outlining to align structure with contemporary writing patterns
+- `/diagram-generation` — use after outlining to flag sections that need visuals
+- `/technical-writing` — drafts each outlined section in sequence

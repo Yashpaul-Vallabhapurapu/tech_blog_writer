@@ -103,3 +103,56 @@ Content performs well on Medium when:
 - Comments and responses (encourage discussion)
 
 Focus on authentic value over keyword stuffing.
+
+---
+
+## Examples
+
+### Example 1: Optimize a title for a Kubernetes autoscaling article
+
+```
+Input: "Kubernetes Autoscaling"
+
+Option A: "Kubernetes Autoscaling: HPA, VPA, and KEDA Explained" (58 chars)
+          → keyword-first, specific technologies named, good for search
+
+Option B: "How to Scale Kubernetes Workloads Automatically in 2025" (55 chars)
+          → benefit-first, freshness signal, broader appeal
+
+Recommended tags: Kubernetes / DevOps / Cloud Infrastructure / Platform Engineering
+```
+
+### Example 2: Select tags for an LLM prompt engineering article
+
+```
+Primary (broad, high-volume):  "Artificial Intelligence"
+Specific (niche):              "Prompt Engineering" / "LLM"
+Trending:                      "ChatGPT"
+
+Avoid: "Technology" (too generic) / "Machine Learning" (overlaps with AI — pick one)
+```
+
+---
+
+## Error Handling
+
+| Error | Handling |
+|-------|----------|
+| Title exceeds 60 characters | Generate 3 shorter alternatives that preserve the primary keyword |
+| No high-volume primary tag for niche topic | Use the closest broad parent tag + 3 specific tags |
+| Article lacks a clear primary keyword | Ask the agent to identify the single most searchable term before proceeding |
+| All suggested tags are low-volume | Include one broad tag even if only partially relevant; avoid all-niche tag sets |
+
+---
+
+## Next Steps
+
+Apply the recommended title, subtitle, and tags in the Medium editor. Pass the article to `/medium-format` for final structural formatting before publishing.
+
+---
+
+## Related Skills
+
+- `/technical-writing` — runs before this skill; provides the draft to optimize
+- `/medium-format` — runs after; applies final formatting including heading hierarchy
+- `/style-research` — vocabulary from the Style Brief informs keyword choices

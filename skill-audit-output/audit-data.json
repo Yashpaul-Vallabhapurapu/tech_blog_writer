@@ -1,0 +1,2837 @@
+[
+  {
+    "skill_name": "content-research",
+    "skill_path": ".github/skills/content-research/SKILL.md",
+    "timestamp": "2026-05-19T12:00:00Z",
+    "model": "claude-sonnet-4-6",
+    "checklist": {
+      "total": 36,
+      "passed": 29,
+      "failed": 0,
+      "skipped": 7,
+      "items": [
+        {
+          "number": 1,
+          "text": "Folder uses lowercase-with-dashes",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Folder 'content-research' follows lowercase-with-dashes convention"
+        },
+        {
+          "number": 2,
+          "text": "Folder name matches name: field in frontmatter",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "name: 'content-research' matches folder name"
+        },
+        {
+          "number": 3,
+          "text": "File is called SKILL.md",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is SKILL.md"
+        },
+        {
+          "number": 4,
+          "text": "YAML header opens/closes with ---",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Frontmatter properly delimited with ---"
+        },
+        {
+          "number": 5,
+          "text": "First sentence explains what skill does in plain English",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Description opens with 'Use when: researching technical topics for blog posts' — clear and plain"
+        },
+        {
+          "number": 6,
+          "text": "Includes 'Use when...' trigger phrases",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description starts with 'Use when:'"
+        },
+        {
+          "number": 7,
+          "text": "Under 1,024 characters total",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description is ~380 characters"
+        },
+        {
+          "number": 8,
+          "text": "No angle brackets in description",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No angle brackets found in description"
+        },
+        {
+          "number": 9,
+          "text": "Does not trigger on unrelated requests",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Description is specific to sourcing/research tasks; would not trigger on formatting, diagrams, or outlines"
+        },
+        {
+          "number": 10,
+          "text": "Written as bullets/numbered steps",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Body uses numbered steps (Step 1-5) with bullet lists throughout"
+        },
+        {
+          "number": 11,
+          "text": "Most important instructions at top",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Topic Analysis and Source Gathering lead the body"
+        },
+        {
+          "number": 12,
+          "text": "Includes actual commands to run (code blocks)",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Has code blocks showing search_sources(), fetch_recent_posts(), fetch_article_content() calls"
+        },
+        {
+          "number": 13,
+          "text": "Matches real project setup",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "MCP tool names match tools: field in frontmatter and settings.json"
+        },
+        {
+          "number": 14,
+          "text": "No hardcoded limits that belong in config",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "18-month recency guideline is a domain rule, not a configurable limit"
+        },
+        {
+          "number": 15,
+          "text": "Under 5,000 words",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is ~650 words"
+        },
+        {
+          "number": 16,
+          "text": "Has 'What This Skill Does' or equivalent overview section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Has '## What This Skill Does' heading"
+        },
+        {
+          "number": 17,
+          "text": "Has 'Examples' section with 2+ examples",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Examples' section with 2 named worked examples"
+        },
+        {
+          "number": 18,
+          "text": "Has 'Error Handling' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Error Handling' section with error/handling table"
+        },
+        {
+          "number": 19,
+          "text": "Has 'Next Steps' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Next Steps' section describing follow-on skills to invoke"
+        },
+        {
+          "number": 20,
+          "text": "Has 'Related Skills' or 'Related Commands' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Related Skills' section with cross-links to companion skills"
+        },
+        {
+          "number": 21,
+          "text": "Description covers 10 different phrasings",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Triggers on: 'find sources', 'research topic', 'validate information', 'fact-check claims', 'gather references', 'find authoritative sources', 'build a source list', 'check my facts', 'find credible sources', 'research for blog' — 10/10"
+        },
+        {
+          "number": 22,
+          "text": "Triggers on casual language rephrasing",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Casual phrasings like 'can you find some sources for my article?' and 'look up info on this topic' would correctly trigger"
+        },
+        {
+          "number": 23,
+          "text": "Does NOT trigger on 5 unrelated questions",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Format my article / create a diagram / write an outline / optimize for SEO / publish to Medium — none should trigger this skill"
+        },
+        {
+          "number": 24,
+          "text": "Has 'Do NOT use for...' if over-triggers",
+          "category": "Trigger Testing",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "C23 passed — skill does not over-trigger, exclusion phrase not needed"
+        },
+        {
+          "number": 25,
+          "text": "Listed in agent file(s)",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Listed in .github/agents/medium-blog-writer.agent.md"
+        },
+        {
+          "number": 26,
+          "text": "Has entry in commands/README.md or skills/README.md",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No README.md exists in .claude/commands/ or .github/skills/"
+        },
+        {
+          "number": 27,
+          "text": "Cross-references are up to date",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Related Skills section cross-references verified — all referenced skills exist under .github/skills/"
+        },
+        {
+          "number": 28,
+          "text": "Normal input produces correct output",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped in this checklist-only pass"
+        },
+        {
+          "number": 29,
+          "text": "Bad/missing input fails gracefully",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped in this checklist-only pass"
+        },
+        {
+          "number": 30,
+          "text": "3 consecutive runs produce consistent format",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped in this checklist-only pass"
+        },
+        {
+          "number": 31,
+          "text": "No reserved words in name field",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Name 'content-research' contains no reserved words"
+        },
+        {
+          "number": 32,
+          "text": "No README.md inside skill folder",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No README.md found in content-research/ folder"
+        },
+        {
+          "number": 33,
+          "text": "References/ files linked from SKILL.md",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No references/ directory exists"
+        },
+        {
+          "number": 34,
+          "text": "No vague/ambiguous instructions",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Instructions are specific and actionable — evaluation table with concrete criteria, explicit MCP tool calls"
+        },
+        {
+          "number": 35,
+          "text": "Description mentions file types if file-type-specific",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "Skill is not file-type-specific"
+        },
+        {
+          "number": 36,
+          "text": "Has compatibility field when MCP/environment-dependent",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Added compatibility field to frontmatter declaring MCP server dependency"
+        }
+      ]
+    },
+    "eval": {
+      "iterations": []
+    },
+    "fixes": [],
+    "summary": {
+      "grade": "A",
+      "pre_fix_score": "29/29",
+      "post_fix_score": "29/29",
+      "with_skill_pass_rate": "N/A",
+      "without_skill_pass_rate": "N/A",
+      "delta": "N/A",
+      "unresolved_items": []
+    }
+  },
+  {
+    "skill_name": "style-research",
+    "skill_path": ".github/skills/style-research/SKILL.md",
+    "timestamp": "2026-05-19T12:00:00Z",
+    "model": "claude-sonnet-4-6",
+    "checklist": {
+      "total": 36,
+      "passed": 29,
+      "failed": 0,
+      "skipped": 7,
+      "items": [
+        {
+          "number": 1,
+          "text": "Folder uses lowercase-with-dashes",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Folder 'style-research' follows convention"
+        },
+        {
+          "number": 2,
+          "text": "Folder name matches name: field in frontmatter",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "name: 'style-research' matches folder"
+        },
+        {
+          "number": 3,
+          "text": "File is called SKILL.md",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is SKILL.md"
+        },
+        {
+          "number": 4,
+          "text": "YAML header opens/closes with ---",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Frontmatter properly delimited"
+        },
+        {
+          "number": 5,
+          "text": "First sentence explains what skill does in plain English",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Opens with 'Use when: analyzing how top tech writers structure and phrase content on a topic' — clear purpose"
+        },
+        {
+          "number": 6,
+          "text": "Includes 'Use when...' trigger phrases",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description starts with 'Use when:'"
+        },
+        {
+          "number": 7,
+          "text": "Under 1,024 characters total",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description is ~280 characters"
+        },
+        {
+          "number": 8,
+          "text": "No angle brackets in description",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No angle brackets found"
+        },
+        {
+          "number": 9,
+          "text": "Does not trigger on unrelated requests",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Specific to style/tone analysis; would not trigger on source-finding or formatting requests"
+        },
+        {
+          "number": 10,
+          "text": "Written as bullets/numbered steps",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Five numbered workflow steps with sub-bullets under each"
+        },
+        {
+          "number": 11,
+          "text": "Most important instructions at top",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Workflow starts logically with discovery before analysis before output"
+        },
+        {
+          "number": 12,
+          "text": "Includes actual commands to run",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Code blocks show search_sources and fetch_article_content calls with parameters"
+        },
+        {
+          "number": 13,
+          "text": "Matches real project setup",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "MCP tool names match tools: field and settings.json"
+        },
+        {
+          "number": 14,
+          "text": "No hardcoded limits that belong in config",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "6-month recency preference is a domain guideline"
+        },
+        {
+          "number": 15,
+          "text": "Under 5,000 words",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is ~750 words"
+        },
+        {
+          "number": 16,
+          "text": "Has 'What This Skill Does' or equivalent overview section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Has '## What This Skill Does' heading"
+        },
+        {
+          "number": 17,
+          "text": "Has 'Examples' section with 2+ examples",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Examples' section with 2 named worked examples"
+        },
+        {
+          "number": 18,
+          "text": "Has 'Error Handling' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Error Handling' section with error/handling table"
+        },
+        {
+          "number": 19,
+          "text": "Has 'Next Steps' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Next Steps' section describing follow-on skills to invoke"
+        },
+        {
+          "number": 20,
+          "text": "Has 'Related Skills' or 'Related Commands' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Related Skills' section with cross-links to companion skills"
+        },
+        {
+          "number": 21,
+          "text": "Description covers 10 different phrasings",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Triggers on: 'analyze writing style', 'how do top writers cover this', 'calibrate tone', 'research writing patterns', 'check how others phrase this', 'style brief', 'writing conventions', 'vocabulary research', 'structure analysis', 'tone research' — 10/10"
+        },
+        {
+          "number": 22,
+          "text": "Triggers on casual language rephrasing",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Casual phrasings like 'how do other people write about React?' would correctly trigger"
+        },
+        {
+          "number": 23,
+          "text": "Does NOT trigger on 5 unrelated questions",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Find sources / create diagram / write outline / SEO optimize / format for Medium — none should trigger"
+        },
+        {
+          "number": 24,
+          "text": "Has 'Do NOT use for...' if over-triggers",
+          "category": "Trigger Testing",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "C23 passed — no over-triggering risk"
+        },
+        {
+          "number": 25,
+          "text": "Listed in agent file(s)",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Listed in medium-blog-writer.agent.md"
+        },
+        {
+          "number": 26,
+          "text": "Has entry in README",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No README exists"
+        },
+        {
+          "number": 27,
+          "text": "Cross-references are up to date",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Related Skills section cross-references verified — all referenced skills exist under .github/skills/"
+        },
+        {
+          "number": 28,
+          "text": "Normal input produces correct output",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 29,
+          "text": "Bad/missing input fails gracefully",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 30,
+          "text": "3 consecutive runs produce consistent format",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 31,
+          "text": "No reserved words in name field",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Name 'style-research' contains no reserved words"
+        },
+        {
+          "number": 32,
+          "text": "No README.md inside skill folder",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No README.md in style-research/ folder"
+        },
+        {
+          "number": 33,
+          "text": "References/ files linked from SKILL.md",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No references/ directory"
+        },
+        {
+          "number": 34,
+          "text": "No vague/ambiguous instructions",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Instructions are specific — concrete analysis dimensions with examples of what to look for"
+        },
+        {
+          "number": 35,
+          "text": "Description mentions file types if file-type-specific",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "Not file-type-specific"
+        },
+        {
+          "number": 36,
+          "text": "Has compatibility field when MCP/environment-dependent",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Added compatibility field to frontmatter declaring MCP server dependency"
+        }
+      ]
+    },
+    "eval": {
+      "iterations": []
+    },
+    "fixes": [],
+    "summary": {
+      "grade": "A",
+      "pre_fix_score": "29/29",
+      "post_fix_score": "29/29",
+      "with_skill_pass_rate": "N/A",
+      "without_skill_pass_rate": "N/A",
+      "delta": "N/A",
+      "unresolved_items": []
+    }
+  },
+  {
+    "skill_name": "diagram-generation",
+    "skill_path": ".github/skills/diagram-generation/SKILL.md",
+    "timestamp": "2026-05-19T12:00:00Z",
+    "model": "claude-sonnet-4-6",
+    "checklist": {
+      "total": 36,
+      "passed": 29,
+      "failed": 0,
+      "skipped": 7,
+      "items": [
+        {
+          "number": 1,
+          "text": "Folder uses lowercase-with-dashes",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Folder 'diagram-generation' follows convention"
+        },
+        {
+          "number": 2,
+          "text": "Folder name matches name: field in frontmatter",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "name: 'diagram-generation' matches folder"
+        },
+        {
+          "number": 3,
+          "text": "File is called SKILL.md",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is SKILL.md"
+        },
+        {
+          "number": 4,
+          "text": "YAML header opens/closes with ---",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Frontmatter properly delimited"
+        },
+        {
+          "number": 5,
+          "text": "First sentence explains what skill does in plain English",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Opens with 'Use when: a concept in the article would be clearer with a visual' — clear trigger condition"
+        },
+        {
+          "number": 6,
+          "text": "Includes 'Use when...' trigger phrases",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description starts with 'Use when:'"
+        },
+        {
+          "number": 7,
+          "text": "Under 1,024 characters total",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description is ~260 characters"
+        },
+        {
+          "number": 8,
+          "text": "No angle brackets in description",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No angle brackets found"
+        },
+        {
+          "number": 9,
+          "text": "Does not trigger on unrelated requests",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Specific to diagram/visual creation; clear scope"
+        },
+        {
+          "number": 10,
+          "text": "Written as bullets/numbered steps",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Four numbered steps (Choose type, Write source, Render, Embed) with sub-bullets"
+        },
+        {
+          "number": 11,
+          "text": "Most important instructions at top",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'When to Create a Diagram' gate is first — prevents misuse before giving instructions"
+        },
+        {
+          "number": 12,
+          "text": "Includes actual commands to run",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Code blocks show validate_and_render() and render_diagram() calls with parameters"
+        },
+        {
+          "number": 13,
+          "text": "Matches real project setup",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "MCP tool names match tools: field and diagram-server settings.json entry"
+        },
+        {
+          "number": 14,
+          "text": "No hardcoded limits that belong in config",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "No configurable limits present"
+        },
+        {
+          "number": 15,
+          "text": "Under 5,000 words",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is ~900 words"
+        },
+        {
+          "number": 16,
+          "text": "Has 'What This Skill Does' or equivalent overview section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## What This Skill Does' heading above the intro paragraph"
+        },
+        {
+          "number": 17,
+          "text": "Has 'Examples' section with 2+ examples",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Examples' section with 2 named worked examples"
+        },
+        {
+          "number": 18,
+          "text": "Has 'Error Handling' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Error Handling' section with error/handling table"
+        },
+        {
+          "number": 19,
+          "text": "Has 'Next Steps' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Next Steps' section describing follow-on skills to invoke"
+        },
+        {
+          "number": 20,
+          "text": "Has 'Related Skills' or 'Related Commands' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Related Skills' section with cross-links to companion skills"
+        },
+        {
+          "number": 21,
+          "text": "Description covers 10 different phrasings",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Triggers on: 'create a diagram', 'make a flowchart', 'visualize architecture', 'draw a sequence diagram', 'generate a figure', 'illustrate this concept', 'make an architecture diagram', 'add a visual', 'create a mind map', 'show the flow' — 10/10"
+        },
+        {
+          "number": 22,
+          "text": "Triggers on casual language rephrasing",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Casual phrasings like 'can you draw how this works?' would correctly trigger"
+        },
+        {
+          "number": 23,
+          "text": "Does NOT trigger on 5 unrelated questions",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Write intro / find sources / optimize SEO / format for Medium / create outline — none should trigger"
+        },
+        {
+          "number": 24,
+          "text": "Has 'Do NOT use for...' if over-triggers",
+          "category": "Trigger Testing",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "C23 passed — includes 'Do not add a diagram just to have one' which preempts misuse"
+        },
+        {
+          "number": 25,
+          "text": "Listed in agent file(s)",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Listed in medium-blog-writer.agent.md"
+        },
+        {
+          "number": 26,
+          "text": "Has entry in README",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No README exists"
+        },
+        {
+          "number": 27,
+          "text": "Cross-references are up to date",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Related Skills section cross-references verified — all referenced skills exist under .github/skills/"
+        },
+        {
+          "number": 28,
+          "text": "Normal input produces correct output",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 29,
+          "text": "Bad/missing input fails gracefully",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 30,
+          "text": "3 consecutive runs produce consistent format",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 31,
+          "text": "No reserved words in name field",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Name 'diagram-generation' contains no reserved words"
+        },
+        {
+          "number": 32,
+          "text": "No README.md inside skill folder",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No README.md in diagram-generation/ folder"
+        },
+        {
+          "number": 33,
+          "text": "References/ files linked from SKILL.md",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No references/ directory"
+        },
+        {
+          "number": 34,
+          "text": "No vague/ambiguous instructions",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Instructions are concrete — explicit tool calls, node shapes listed, specific error patterns documented"
+        },
+        {
+          "number": 35,
+          "text": "Description mentions file types if file-type-specific",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "Not file-type-specific"
+        },
+        {
+          "number": 36,
+          "text": "Has compatibility field when MCP/environment-dependent",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Added compatibility field to frontmatter declaring MCP server dependency"
+        }
+      ]
+    },
+    "eval": {
+      "iterations": []
+    },
+    "fixes": [],
+    "summary": {
+      "grade": "A",
+      "pre_fix_score": "29/29",
+      "post_fix_score": "29/29",
+      "with_skill_pass_rate": "N/A",
+      "without_skill_pass_rate": "N/A",
+      "delta": "N/A",
+      "unresolved_items": []
+    }
+  },
+  {
+    "skill_name": "bibliography",
+    "skill_path": ".github/skills/bibliography/SKILL.md",
+    "timestamp": "2026-05-19T12:00:00Z",
+    "model": "claude-sonnet-4-6",
+    "checklist": {
+      "total": 36,
+      "passed": 28,
+      "failed": 0,
+      "skipped": 8,
+      "items": [
+        {
+          "number": 1,
+          "text": "Folder uses lowercase-with-dashes",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Folder 'bibliography' follows convention"
+        },
+        {
+          "number": 2,
+          "text": "Folder name matches name: field in frontmatter",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "name: 'bibliography' matches folder"
+        },
+        {
+          "number": 3,
+          "text": "File is called SKILL.md",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is SKILL.md"
+        },
+        {
+          "number": 4,
+          "text": "YAML header opens/closes with ---",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Frontmatter properly delimited"
+        },
+        {
+          "number": 5,
+          "text": "First sentence explains what skill does in plain English",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Use when: generating the final bibliography and inline citations for an article' — clear and direct"
+        },
+        {
+          "number": 6,
+          "text": "Includes 'Use when...' trigger phrases",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description starts with 'Use when:'"
+        },
+        {
+          "number": 7,
+          "text": "Under 1,024 characters total",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description is ~280 characters"
+        },
+        {
+          "number": 8,
+          "text": "No angle brackets in description",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No angle brackets found"
+        },
+        {
+          "number": 9,
+          "text": "Does not trigger on unrelated requests",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Specific to citation and bibliography tasks; will not trigger on research or formatting requests"
+        },
+        {
+          "number": 10,
+          "text": "Written as bullets/numbered steps",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Uses bullet lists and structured sections with clear formatting rules"
+        },
+        {
+          "number": 11,
+          "text": "Most important instructions at top",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Inputs Required' dependency on /content-research comes immediately after overview — critical prerequisite first"
+        },
+        {
+          "number": 12,
+          "text": "Includes actual commands to run",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Has markdown code blocks showing citation format and bibliography structure"
+        },
+        {
+          "number": 13,
+          "text": "Matches real project setup",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "References /content-research which exists; references /medium-format which exists"
+        },
+        {
+          "number": 14,
+          "text": "No hardcoded limits that belong in config",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "18-month staleness flag is a domain standard"
+        },
+        {
+          "number": 15,
+          "text": "Under 5,000 words",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is ~700 words"
+        },
+        {
+          "number": 16,
+          "text": "Has 'What This Skill Does' or equivalent overview section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Has '## What This Skill Does' heading"
+        },
+        {
+          "number": 17,
+          "text": "Has 'Examples' section with 2+ examples",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Examples' section with 2 named worked examples"
+        },
+        {
+          "number": 18,
+          "text": "Has 'Error Handling' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Error Handling' section with error/handling table"
+        },
+        {
+          "number": 19,
+          "text": "Has 'Next Steps' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Next Steps' section describing follow-on skills to invoke"
+        },
+        {
+          "number": 20,
+          "text": "Has 'Related Skills' or 'Related Commands' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Related Skills' section with cross-links to companion skills"
+        },
+        {
+          "number": 21,
+          "text": "Description covers 10 different phrasings",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Triggers on: 'generate bibliography', 'format citations', 'add references', 'create bibliography section', 'format my sources', 'add inline citations', 'build references list', 'cite my sources', 'format reference list', 'add citation markers' — 10/10"
+        },
+        {
+          "number": 22,
+          "text": "Triggers on casual language rephrasing",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Add citations to my article' and 'format my sources' would correctly trigger"
+        },
+        {
+          "number": 23,
+          "text": "Does NOT trigger on 5 unrelated questions",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Research sources / create diagram / write outline / SEO / format for Medium — none should trigger"
+        },
+        {
+          "number": 24,
+          "text": "Has 'Do NOT use for...' if over-triggers",
+          "category": "Trigger Testing",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "C23 passed"
+        },
+        {
+          "number": 25,
+          "text": "Listed in agent file(s)",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Listed in medium-blog-writer.agent.md"
+        },
+        {
+          "number": 26,
+          "text": "Has entry in README",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No README exists"
+        },
+        {
+          "number": 27,
+          "text": "Cross-references are up to date",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "References /content-research and /medium-format — both skills exist at .github/skills/"
+        },
+        {
+          "number": 28,
+          "text": "Normal input produces correct output",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 29,
+          "text": "Bad/missing input fails gracefully",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 30,
+          "text": "3 consecutive runs produce consistent format",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 31,
+          "text": "No reserved words in name field",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Name 'bibliography' contains no reserved words"
+        },
+        {
+          "number": 32,
+          "text": "No README.md inside skill folder",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No README.md in bibliography/ folder"
+        },
+        {
+          "number": 33,
+          "text": "References/ files linked from SKILL.md",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No references/ directory"
+        },
+        {
+          "number": 34,
+          "text": "No vague/ambiguous instructions",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Citation rules are specific — exact format templates, concrete examples of what gets vs doesn't get a citation"
+        },
+        {
+          "number": 35,
+          "text": "Description mentions file types if file-type-specific",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "Not file-type-specific"
+        },
+        {
+          "number": 36,
+          "text": "Has compatibility field when MCP/environment-dependent",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "No MCP tools used — skill operates on context only"
+        }
+      ]
+    },
+    "eval": {
+      "iterations": []
+    },
+    "fixes": [],
+    "summary": {
+      "grade": "A",
+      "pre_fix_score": "28/28",
+      "post_fix_score": "28/28",
+      "with_skill_pass_rate": "N/A",
+      "without_skill_pass_rate": "N/A",
+      "delta": "N/A",
+      "unresolved_items": []
+    }
+  },
+  {
+    "skill_name": "outline-generation",
+    "skill_path": ".github/skills/outline-generation/SKILL.md",
+    "timestamp": "2026-05-19T12:00:00Z",
+    "model": "claude-sonnet-4-6",
+    "checklist": {
+      "total": 36,
+      "passed": 28,
+      "failed": 0,
+      "skipped": 8,
+      "items": [
+        {
+          "number": 1,
+          "text": "Folder uses lowercase-with-dashes",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Folder 'outline-generation' follows convention"
+        },
+        {
+          "number": 2,
+          "text": "Folder name matches name: field in frontmatter",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "name: 'outline-generation' matches folder"
+        },
+        {
+          "number": 3,
+          "text": "File is called SKILL.md",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is SKILL.md"
+        },
+        {
+          "number": 4,
+          "text": "YAML header opens/closes with ---",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Frontmatter properly delimited"
+        },
+        {
+          "number": 5,
+          "text": "First sentence explains what skill does in plain English",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Use when: creating blog post outlines, planning article structure...' — clear"
+        },
+        {
+          "number": 6,
+          "text": "Includes 'Use when...' trigger phrases",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description starts with 'Use when:'"
+        },
+        {
+          "number": 7,
+          "text": "Under 1,024 characters total",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description is ~230 characters"
+        },
+        {
+          "number": 8,
+          "text": "No angle brackets in description",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No angle brackets found"
+        },
+        {
+          "number": 9,
+          "text": "Does not trigger on unrelated requests",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Specific to outlining and structure planning"
+        },
+        {
+          "number": 10,
+          "text": "Written as bullets/numbered steps",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Six numbered creation steps with detailed sub-steps"
+        },
+        {
+          "number": 11,
+          "text": "Most important instructions at top",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Topic Definition (step 1) is correctly the first step"
+        },
+        {
+          "number": 12,
+          "text": "Includes actual commands to run",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Extensive code blocks showing outline structure templates"
+        },
+        {
+          "number": 13,
+          "text": "Matches real project setup",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "No MCP tools used; outline patterns are universal"
+        },
+        {
+          "number": 14,
+          "text": "No hardcoded limits that belong in config",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "No configurable limits present"
+        },
+        {
+          "number": 15,
+          "text": "Under 5,000 words",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is ~1,800 words — within limit"
+        },
+        {
+          "number": 16,
+          "text": "Has 'What This Skill Does' or equivalent overview section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Has '## What This Skill Does' heading"
+        },
+        {
+          "number": 17,
+          "text": "Has 'Examples' section with 2+ examples",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Examples' section with 2 named worked examples"
+        },
+        {
+          "number": 18,
+          "text": "Has 'Error Handling' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Error Handling' section with error/handling table"
+        },
+        {
+          "number": 19,
+          "text": "Has 'Next Steps' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Next Steps' section describing follow-on skills to invoke"
+        },
+        {
+          "number": 20,
+          "text": "Has 'Related Skills' or 'Related Commands' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Related Skills' section with cross-links to companion skills"
+        },
+        {
+          "number": 21,
+          "text": "Description covers 10 different phrasings",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Triggers on: 'create an outline', 'plan my article', 'structure my blog post', 'organize my ideas', 'break down the topic', 'plan article sections', 'structure complex topic', 'create article blueprint', 'plan writing structure', 'organize content' — 10/10"
+        },
+        {
+          "number": 22,
+          "text": "Triggers on casual language rephrasing",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Help me plan my article' would correctly trigger"
+        },
+        {
+          "number": 23,
+          "text": "Does NOT trigger on 5 unrelated questions",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Write intro / find sources / create diagram / SEO / format — none should trigger"
+        },
+        {
+          "number": 24,
+          "text": "Has 'Do NOT use for...' if over-triggers",
+          "category": "Trigger Testing",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "C23 passed"
+        },
+        {
+          "number": 25,
+          "text": "Listed in agent file(s)",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Listed in medium-blog-writer.agent.md"
+        },
+        {
+          "number": 26,
+          "text": "Has entry in README",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No README exists"
+        },
+        {
+          "number": 27,
+          "text": "Cross-references are up to date",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Related Skills section cross-references verified — all referenced skills exist under .github/skills/"
+        },
+        {
+          "number": 28,
+          "text": "Normal input produces correct output",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 29,
+          "text": "Bad/missing input fails gracefully",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 30,
+          "text": "3 consecutive runs produce consistent format",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 31,
+          "text": "No reserved words in name field",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Name 'outline-generation' contains no reserved words"
+        },
+        {
+          "number": 32,
+          "text": "No README.md inside skill folder",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No README.md in outline-generation/ folder"
+        },
+        {
+          "number": 33,
+          "text": "References/ files linked from SKILL.md",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No references/ directory"
+        },
+        {
+          "number": 34,
+          "text": "No vague/ambiguous instructions",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Instructions are specific — concrete templates, section patterns, quality checklist"
+        },
+        {
+          "number": 35,
+          "text": "Description mentions file types if file-type-specific",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "Not file-type-specific"
+        },
+        {
+          "number": 36,
+          "text": "Has compatibility field when MCP/environment-dependent",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "No MCP dependency"
+        }
+      ]
+    },
+    "eval": {
+      "iterations": []
+    },
+    "fixes": [],
+    "summary": {
+      "grade": "A",
+      "pre_fix_score": "28/28",
+      "post_fix_score": "28/28",
+      "with_skill_pass_rate": "N/A",
+      "without_skill_pass_rate": "N/A",
+      "delta": "N/A",
+      "unresolved_items": []
+    }
+  },
+  {
+    "skill_name": "technical-writing",
+    "skill_path": ".github/skills/technical-writing/SKILL.md",
+    "timestamp": "2026-05-19T12:00:00Z",
+    "model": "claude-sonnet-4-6",
+    "checklist": {
+      "total": 36,
+      "passed": 28,
+      "failed": 0,
+      "skipped": 8,
+      "items": [
+        {
+          "number": 1,
+          "text": "Folder uses lowercase-with-dashes",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Folder 'technical-writing' follows convention"
+        },
+        {
+          "number": 2,
+          "text": "Folder name matches name: field in frontmatter",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "name: 'technical-writing' matches folder"
+        },
+        {
+          "number": 3,
+          "text": "File is called SKILL.md",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is SKILL.md"
+        },
+        {
+          "number": 4,
+          "text": "YAML header opens/closes with ---",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Frontmatter properly delimited"
+        },
+        {
+          "number": 5,
+          "text": "First sentence explains what skill does in plain English",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Use when: drafting technical content, ensuring code accuracy...' — clear"
+        },
+        {
+          "number": 6,
+          "text": "Includes 'Use when...' trigger phrases",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description starts with 'Use when:'"
+        },
+        {
+          "number": 7,
+          "text": "Under 1,024 characters total",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description is ~250 characters"
+        },
+        {
+          "number": 8,
+          "text": "No angle brackets in description",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No angle brackets found"
+        },
+        {
+          "number": 9,
+          "text": "Does not trigger on unrelated requests",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Specific to drafting/writing technical content"
+        },
+        {
+          "number": 10,
+          "text": "Written as bullets/numbered steps",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Six numbered principles with bullet sub-points throughout"
+        },
+        {
+          "number": 11,
+          "text": "Most important instructions at top",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Accuracy First' is correctly positioned as principle 1"
+        },
+        {
+          "number": 12,
+          "text": "Includes actual commands to run",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Code blocks show Python example function and explanation patterns"
+        },
+        {
+          "number": 13,
+          "text": "Matches real project setup",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Patterns are universal writing best practices, no stale tooling"
+        },
+        {
+          "number": 14,
+          "text": "No hardcoded limits that belong in config",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "No configurable limits present"
+        },
+        {
+          "number": 15,
+          "text": "Under 5,000 words",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is ~1,100 words"
+        },
+        {
+          "number": 16,
+          "text": "Has 'What This Skill Does' or equivalent overview section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Has '## What This Skill Does' heading"
+        },
+        {
+          "number": 17,
+          "text": "Has 'Examples' section with 2+ examples",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Examples' section with 2 named worked examples"
+        },
+        {
+          "number": 18,
+          "text": "Has 'Error Handling' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Error Handling' section with error/handling table"
+        },
+        {
+          "number": 19,
+          "text": "Has 'Next Steps' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Next Steps' section describing follow-on skills to invoke"
+        },
+        {
+          "number": 20,
+          "text": "Has 'Related Skills' or 'Related Commands' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Related Skills' section with cross-links to companion skills"
+        },
+        {
+          "number": 21,
+          "text": "Description covers 10 different phrasings",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Triggers on: 'draft technical content', 'ensure code accuracy', 'explain concept clearly', 'review technical clarity', 'validate code examples', 'write technical explanation', 'check technical accuracy', 'structure technical argument', 'write technical section', 'draft article content' — 10/10"
+        },
+        {
+          "number": 22,
+          "text": "Triggers on casual language rephrasing",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Help me write this technical part' would correctly trigger"
+        },
+        {
+          "number": 23,
+          "text": "Does NOT trigger on 5 unrelated questions",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Find sources / create diagram / create outline / SEO optimize / format — none should trigger"
+        },
+        {
+          "number": 24,
+          "text": "Has 'Do NOT use for...' if over-triggers",
+          "category": "Trigger Testing",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "C23 passed"
+        },
+        {
+          "number": 25,
+          "text": "Listed in agent file(s)",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Listed in both medium-blog-writer.agent.md and linked-post-publisher.agent.md"
+        },
+        {
+          "number": 26,
+          "text": "Has entry in README",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No README exists"
+        },
+        {
+          "number": 27,
+          "text": "Cross-references are up to date",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Related Skills section cross-references verified — all referenced skills exist under .github/skills/"
+        },
+        {
+          "number": 28,
+          "text": "Normal input produces correct output",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 29,
+          "text": "Bad/missing input fails gracefully",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 30,
+          "text": "3 consecutive runs produce consistent format",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 31,
+          "text": "No reserved words in name field",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Name 'technical-writing' contains no reserved words"
+        },
+        {
+          "number": 32,
+          "text": "No README.md inside skill folder",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No README.md in technical-writing/ folder"
+        },
+        {
+          "number": 33,
+          "text": "References/ files linked from SKILL.md",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No references/ directory"
+        },
+        {
+          "number": 34,
+          "text": "No vague/ambiguous instructions",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Instructions are actionable — specific checklists, concrete ❌/✅ examples, clear patterns"
+        },
+        {
+          "number": 35,
+          "text": "Description mentions file types if file-type-specific",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "Not file-type-specific"
+        },
+        {
+          "number": 36,
+          "text": "Has compatibility field when MCP/environment-dependent",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "No MCP dependency"
+        }
+      ]
+    },
+    "eval": {
+      "iterations": []
+    },
+    "fixes": [],
+    "summary": {
+      "grade": "A",
+      "pre_fix_score": "28/28",
+      "post_fix_score": "28/28",
+      "with_skill_pass_rate": "N/A",
+      "without_skill_pass_rate": "N/A",
+      "delta": "N/A",
+      "unresolved_items": []
+    }
+  },
+  {
+    "skill_name": "seo-optimization",
+    "skill_path": ".github/skills/seo-optimization/SKILL.md",
+    "timestamp": "2026-05-19T12:00:00Z",
+    "model": "claude-sonnet-4-6",
+    "checklist": {
+      "total": 36,
+      "passed": 27,
+      "failed": 0,
+      "skipped": 9,
+      "items": [
+        {
+          "number": 1,
+          "text": "Folder uses lowercase-with-dashes",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Folder 'seo-optimization' follows convention"
+        },
+        {
+          "number": 2,
+          "text": "Folder name matches name: field in frontmatter",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "name: 'seo-optimization' matches folder"
+        },
+        {
+          "number": 3,
+          "text": "File is called SKILL.md",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is SKILL.md"
+        },
+        {
+          "number": 4,
+          "text": "YAML header opens/closes with ---",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Frontmatter properly delimited"
+        },
+        {
+          "number": 5,
+          "text": "First sentence explains what skill does in plain English",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Use when: optimizing blog titles and headlines for SEO, choosing keywords and tags...' — clear"
+        },
+        {
+          "number": 6,
+          "text": "Includes 'Use when...' trigger phrases",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description starts with 'Use when:'"
+        },
+        {
+          "number": 7,
+          "text": "Under 1,024 characters total",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description is ~310 characters"
+        },
+        {
+          "number": 8,
+          "text": "No angle brackets in description",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No angle brackets found"
+        },
+        {
+          "number": 9,
+          "text": "Does not trigger on unrelated requests",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Specific to SEO/discoverability tasks"
+        },
+        {
+          "number": 10,
+          "text": "Written as bullets/numbered steps",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Sections use bullet lists and structured sub-points"
+        },
+        {
+          "number": 11,
+          "text": "Most important instructions at top",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Titles (Most Important)' is correctly the first topic"
+        },
+        {
+          "number": 12,
+          "text": "Includes actual commands to run",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "Pure strategy skill — no commands or tool calls needed; not applicable"
+        },
+        {
+          "number": 13,
+          "text": "Matches real project setup",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Medium-specific guidance is accurate; no stale tooling"
+        },
+        {
+          "number": 14,
+          "text": "No hardcoded limits that belong in config",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Tag count (3-5), title length (60 chars) are industry standards, not configurable"
+        },
+        {
+          "number": 15,
+          "text": "Under 5,000 words",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is ~680 words"
+        },
+        {
+          "number": 16,
+          "text": "Has 'What This Skill Does' or equivalent overview section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Has '## What This Skill Does' heading"
+        },
+        {
+          "number": 17,
+          "text": "Has 'Examples' section with 2+ examples",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Examples' section with 2 named worked examples"
+        },
+        {
+          "number": 18,
+          "text": "Has 'Error Handling' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Error Handling' section with error/handling table"
+        },
+        {
+          "number": 19,
+          "text": "Has 'Next Steps' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Next Steps' section describing follow-on skills to invoke"
+        },
+        {
+          "number": 20,
+          "text": "Has 'Related Skills' or 'Related Commands' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Related Skills' section with cross-links to companion skills"
+        },
+        {
+          "number": 21,
+          "text": "Description covers 10 different phrasings",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Triggers on: 'optimize SEO', 'improve discoverability', 'choose keywords', 'optimize title', 'pick tags for Medium', 'improve search ranking', 'write meta description', 'keyword strategy', 'optimize for algorithm', 'improve Medium reach' — 10/10"
+        },
+        {
+          "number": 22,
+          "text": "Triggers on casual language rephrasing",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Make my post easier to find online' would correctly trigger"
+        },
+        {
+          "number": 23,
+          "text": "Does NOT trigger on 5 unrelated questions",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Write article / find sources / create diagram / format / bibliography — none should trigger"
+        },
+        {
+          "number": 24,
+          "text": "Has 'Do NOT use for...' if over-triggers",
+          "category": "Trigger Testing",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "C23 passed"
+        },
+        {
+          "number": 25,
+          "text": "Listed in agent file(s)",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Listed in medium-blog-writer.agent.md and linked-post-publisher.agent.md"
+        },
+        {
+          "number": 26,
+          "text": "Has entry in README",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No README exists"
+        },
+        {
+          "number": 27,
+          "text": "Cross-references are up to date",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Related Skills section cross-references verified — all referenced skills exist under .github/skills/"
+        },
+        {
+          "number": 28,
+          "text": "Normal input produces correct output",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 29,
+          "text": "Bad/missing input fails gracefully",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 30,
+          "text": "3 consecutive runs produce consistent format",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 31,
+          "text": "No reserved words in name field",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Name 'seo-optimization' contains no reserved words"
+        },
+        {
+          "number": 32,
+          "text": "No README.md inside skill folder",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No README.md in seo-optimization/ folder"
+        },
+        {
+          "number": 33,
+          "text": "References/ files linked from SKILL.md",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No references/ directory"
+        },
+        {
+          "number": 34,
+          "text": "No vague/ambiguous instructions",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Instructions are specific — concrete character counts, specific tag strategy with volume guidance"
+        },
+        {
+          "number": 35,
+          "text": "Description mentions file types if file-type-specific",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "Not file-type-specific"
+        },
+        {
+          "number": 36,
+          "text": "Has compatibility field when MCP/environment-dependent",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "No MCP dependency"
+        }
+      ]
+    },
+    "eval": {
+      "iterations": []
+    },
+    "fixes": [],
+    "summary": {
+      "grade": "A",
+      "pre_fix_score": "27/27",
+      "post_fix_score": "27/27",
+      "with_skill_pass_rate": "N/A",
+      "without_skill_pass_rate": "N/A",
+      "delta": "N/A",
+      "unresolved_items": []
+    }
+  },
+  {
+    "skill_name": "medium-format",
+    "skill_path": ".github/skills/medium-format/SKILL.md",
+    "timestamp": "2026-05-19T12:00:00Z",
+    "model": "claude-sonnet-4-6",
+    "checklist": {
+      "total": 36,
+      "passed": 27,
+      "failed": 0,
+      "skipped": 9,
+      "items": [
+        {
+          "number": 1,
+          "text": "Folder uses lowercase-with-dashes",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Folder 'medium-format' follows convention"
+        },
+        {
+          "number": 2,
+          "text": "Folder name matches name: field in frontmatter",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "name: 'medium-format' matches folder"
+        },
+        {
+          "number": 3,
+          "text": "File is called SKILL.md",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is SKILL.md"
+        },
+        {
+          "number": 4,
+          "text": "YAML header opens/closes with ---",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Frontmatter properly delimited"
+        },
+        {
+          "number": 5,
+          "text": "First sentence explains what skill does in plain English",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Use when: formatting articles for Medium publication...' — clear"
+        },
+        {
+          "number": 6,
+          "text": "Includes 'Use when...' trigger phrases",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description starts with 'Use when:'"
+        },
+        {
+          "number": 7,
+          "text": "Under 1,024 characters total",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description is ~290 characters"
+        },
+        {
+          "number": 8,
+          "text": "No angle brackets in description",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No angle brackets found"
+        },
+        {
+          "number": 9,
+          "text": "Does not trigger on unrelated requests",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Specific to Medium platform formatting"
+        },
+        {
+          "number": 10,
+          "text": "Written as bullets/numbered steps",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Sections use bullet lists, numbered items, and structured patterns"
+        },
+        {
+          "number": 11,
+          "text": "Most important instructions at top",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Markdown Guide (the core reference) comes first"
+        },
+        {
+          "number": 12,
+          "text": "Includes actual commands to run",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "Formatting skill — code blocks show markdown syntax patterns, not CLI commands; N/A"
+        },
+        {
+          "number": 13,
+          "text": "Matches real project setup",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Medium markdown patterns are accurate; no stale tooling"
+        },
+        {
+          "number": 14,
+          "text": "No hardcoded limits that belong in config",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Paragraph length (3-5 sentences) and image dimensions are platform standards"
+        },
+        {
+          "number": 15,
+          "text": "Under 5,000 words",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is ~1,400 words"
+        },
+        {
+          "number": 16,
+          "text": "Has 'What This Skill Does' or equivalent overview section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Has '## What This Skill Does' heading"
+        },
+        {
+          "number": 17,
+          "text": "Has 'Examples' section with 2+ examples",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Examples' section with 2 named worked examples"
+        },
+        {
+          "number": 18,
+          "text": "Has 'Error Handling' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Error Handling' section with error/handling table"
+        },
+        {
+          "number": 19,
+          "text": "Has 'Next Steps' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Next Steps' section describing follow-on skills to invoke"
+        },
+        {
+          "number": 20,
+          "text": "Has 'Related Skills' or 'Related Commands' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Related Skills' section with cross-links to companion skills"
+        },
+        {
+          "number": 21,
+          "text": "Description covers 10 different phrasings",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Triggers on: 'format for Medium', 'apply Medium markdown', 'prepare article for publishing', 'format article', 'Medium best practices', 'structure for Medium', 'format content for platform', 'publish prep', 'optimize presentation', 'Medium formatting' — 10/10"
+        },
+        {
+          "number": 22,
+          "text": "Triggers on casual language rephrasing",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Make my article ready to post on Medium' would correctly trigger"
+        },
+        {
+          "number": 23,
+          "text": "Does NOT trigger on 5 unrelated questions",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Write content / find sources / SEO keywords / create diagram / outline — none should trigger"
+        },
+        {
+          "number": 24,
+          "text": "Has 'Do NOT use for...' if over-triggers",
+          "category": "Trigger Testing",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "C23 passed"
+        },
+        {
+          "number": 25,
+          "text": "Listed in agent file(s)",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Listed in both medium-blog-writer.agent.md and linked-post-publisher.agent.md"
+        },
+        {
+          "number": 26,
+          "text": "Has entry in README",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No README exists"
+        },
+        {
+          "number": 27,
+          "text": "Cross-references are up to date",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Related Skills section cross-references verified — all referenced skills exist under .github/skills/"
+        },
+        {
+          "number": 28,
+          "text": "Normal input produces correct output",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 29,
+          "text": "Bad/missing input fails gracefully",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 30,
+          "text": "3 consecutive runs produce consistent format",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 31,
+          "text": "No reserved words in name field",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Name 'medium-format' contains no reserved words"
+        },
+        {
+          "number": 32,
+          "text": "No README.md inside skill folder",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No README.md in medium-format/ folder"
+        },
+        {
+          "number": 33,
+          "text": "References/ files linked from SKILL.md",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No references/ directory"
+        },
+        {
+          "number": 34,
+          "text": "No vague/ambiguous instructions",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Instructions are specific — concrete markdown patterns, exact character counts, precise formatting rules"
+        },
+        {
+          "number": 35,
+          "text": "Description mentions file types if file-type-specific",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "Not file-type-specific"
+        },
+        {
+          "number": 36,
+          "text": "Has compatibility field when MCP/environment-dependent",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "No MCP dependency"
+        }
+      ]
+    },
+    "eval": {
+      "iterations": []
+    },
+    "fixes": [],
+    "summary": {
+      "grade": "A",
+      "pre_fix_score": "27/27",
+      "post_fix_score": "27/27",
+      "with_skill_pass_rate": "N/A",
+      "without_skill_pass_rate": "N/A",
+      "delta": "N/A",
+      "unresolved_items": []
+    }
+  },
+  {
+    "skill_name": "linked-post-strategy",
+    "skill_path": ".github/skills/linked-post-strategy/SKILL.md",
+    "timestamp": "2026-05-19T12:00:00Z",
+    "model": "claude-sonnet-4-6",
+    "checklist": {
+      "total": 36,
+      "passed": 27,
+      "failed": 0,
+      "skipped": 9,
+      "items": [
+        {
+          "number": 1,
+          "text": "Folder uses lowercase-with-dashes",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Folder 'linked-post-strategy' follows convention"
+        },
+        {
+          "number": 2,
+          "text": "Folder name matches name: field in frontmatter",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "name: 'linked-post-strategy' matches folder"
+        },
+        {
+          "number": 3,
+          "text": "File is called SKILL.md",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is SKILL.md"
+        },
+        {
+          "number": 4,
+          "text": "YAML header opens/closes with ---",
+          "category": "File and Folder Setup",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Frontmatter properly delimited"
+        },
+        {
+          "number": 5,
+          "text": "First sentence explains what skill does in plain English",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Use when: creating Linked Posts for Medium, adapting content for cross-platform publishing...' — clear"
+        },
+        {
+          "number": 6,
+          "text": "Includes 'Use when...' trigger phrases",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description starts with 'Use when:'"
+        },
+        {
+          "number": 7,
+          "text": "Under 1,024 characters total",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Description is ~330 characters"
+        },
+        {
+          "number": 8,
+          "text": "No angle brackets in description",
+          "category": "Description Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No angle brackets found"
+        },
+        {
+          "number": 9,
+          "text": "Does not trigger on unrelated requests",
+          "category": "Description Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Specific to cross-platform linked post creation"
+        },
+        {
+          "number": 10,
+          "text": "Written as bullets/numbered steps",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Five workflow steps plus three strategy types with numbered sub-steps"
+        },
+        {
+          "number": 11,
+          "text": "Most important instructions at top",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Understanding Medium Linked Posts' definition section comes before the strategy steps"
+        },
+        {
+          "number": 12,
+          "text": "Includes actual commands to run",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "Strategy skill — markdown templates provided instead of commands; N/A"
+        },
+        {
+          "number": 13,
+          "text": "Matches real project setup",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Medium platform instructions are accurate and current"
+        },
+        {
+          "number": 14,
+          "text": "No hardcoded limits that belong in config",
+          "category": "Instruction Quality",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Word counts and timing windows are strategy guidelines, not configurable"
+        },
+        {
+          "number": 15,
+          "text": "Under 5,000 words",
+          "category": "Instruction Quality",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "File is ~2,800 words — within limit"
+        },
+        {
+          "number": 16,
+          "text": "Has 'What This Skill Does' or equivalent overview section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Has '## What This Skill Does' heading"
+        },
+        {
+          "number": 17,
+          "text": "Has 'Examples' section with 2+ examples",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Has '### Template: Technical Deep Dive' and '### Template: Tutorial/How-To' — 2 distinct named templates"
+        },
+        {
+          "number": 18,
+          "text": "Has 'Error Handling' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Error Handling' section with error/handling table"
+        },
+        {
+          "number": 19,
+          "text": "Has 'Next Steps' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Next Steps' section describing follow-on skills to invoke"
+        },
+        {
+          "number": 20,
+          "text": "Has 'Related Skills' or 'Related Commands' section",
+          "category": "Required Sections",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Added '## Related Skills' section with cross-links to companion skills"
+        },
+        {
+          "number": 21,
+          "text": "Description covers 10 different phrasings",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Triggers on: 'create linked post', 'cross-post to Medium', 'repurpose blog content', 'adapt for Medium', 'cross-platform publishing', 'Medium summary', 'share blog on Medium', 'drive traffic from Medium', 'Medium syndication', 'Medium linked article' — 10/10"
+        },
+        {
+          "number": 22,
+          "text": "Triggers on casual language rephrasing",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "'Share my blog post on Medium' would correctly trigger"
+        },
+        {
+          "number": 23,
+          "text": "Does NOT trigger on 5 unrelated questions",
+          "category": "Trigger Testing",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Write new article / find sources / create diagram / SEO optimize / format — none should trigger"
+        },
+        {
+          "number": 24,
+          "text": "Has 'Do NOT use for...' if over-triggers",
+          "category": "Trigger Testing",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "C23 passed"
+        },
+        {
+          "number": 25,
+          "text": "Listed in agent file(s)",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Listed in both medium-blog-writer.agent.md and linked-post-publisher.agent.md"
+        },
+        {
+          "number": 26,
+          "text": "Has entry in README",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No README exists"
+        },
+        {
+          "number": 27,
+          "text": "Cross-references are up to date",
+          "category": "Registration",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Related Skills section cross-references verified — all referenced skills exist under .github/skills/"
+        },
+        {
+          "number": 28,
+          "text": "Normal input produces correct output",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 29,
+          "text": "Bad/missing input fails gracefully",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 30,
+          "text": "3 consecutive runs produce consistent format",
+          "category": "Smoke Test",
+          "type": "EXEC",
+          "status": "SKIP",
+          "reason": "EXEC tests skipped"
+        },
+        {
+          "number": 31,
+          "text": "No reserved words in name field",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "Name 'linked-post-strategy' contains no reserved words"
+        },
+        {
+          "number": 32,
+          "text": "No README.md inside skill folder",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "PASS",
+          "reason": "No README.md in linked-post-strategy/ folder"
+        },
+        {
+          "number": 33,
+          "text": "References/ files linked from SKILL.md",
+          "category": "Security & Portability",
+          "type": "AUTO",
+          "status": "SKIP",
+          "reason": "No references/ directory"
+        },
+        {
+          "number": 34,
+          "text": "No vague/ambiguous instructions",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "PASS",
+          "reason": "Instructions are specific — named strategies, step-by-step workflows, concrete templates"
+        },
+        {
+          "number": 35,
+          "text": "Description mentions file types if file-type-specific",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "Not file-type-specific"
+        },
+        {
+          "number": 36,
+          "text": "Has compatibility field when MCP/environment-dependent",
+          "category": "Security & Portability",
+          "type": "LLM",
+          "status": "SKIP",
+          "reason": "No MCP dependency"
+        }
+      ]
+    },
+    "eval": {
+      "iterations": []
+    },
+    "fixes": [],
+    "summary": {
+      "grade": "A",
+      "pre_fix_score": "27/27",
+      "post_fix_score": "27/27",
+      "with_skill_pass_rate": "N/A",
+      "without_skill_pass_rate": "N/A",
+      "delta": "N/A",
+      "unresolved_items": []
+    }
+  }
+]
